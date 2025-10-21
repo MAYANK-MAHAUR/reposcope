@@ -41,30 +41,18 @@ The majority of users exploring tools like this are developers — most come loo
 - Python 3.8+
 - Git
 - SQLite
-- Required Python packages (see `requirements.txt`)
+- Required Python packages 
 
 ### Setup
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/<your-username>/reposcopeagent.git
+   git clone https://github.com/MAYANK-MAHAUR/reposcopeagent.git
    cd reposcopeagent
    ```
 
 2. **Install Dependencies**:
-   ```bash
-   pip install -r requirements.txt
-   ```
-   Required packages:
-   - `aiohttp`
-   - `sentence-transformers`
-   - `faiss-cpu`
-   - `pygit2`
-   - `pylint`
 
 3. **Set Environment Variables**:
-   ```bash
-   export DEBUG_MODE=false  # Set to "true" for debug logs
-   ```
 
 4. **Run the Server**:
    ```bash
@@ -215,5 +203,3 @@ MIT License. See `LICENSE` for details.
 - **UI Integration**: Enhance output for sentient.xyz’s web interface (e.g., HTML tables).
 - **Rate Limiting**: Implement GitHub API rate limiting for production use.
 
-## Contact
-For issues or feature requests, open a GitHub issue or contact the maintainers at sentient.xyz.
