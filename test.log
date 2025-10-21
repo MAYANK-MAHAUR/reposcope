@@ -382,3 +382,5 @@ Traceback (most recent call last):
     self._sock.shutdown(socket.SHUT_RDWR)
     ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
 ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+ERROR:__main__:Connection error: Cannot connect to host 127.0.0.1:8000 ssl:default [The remote computer refused the network connection]
+ERROR:__main__:Connection error: Cannot connect to host 127.0.0.1:8000 ssl:default [The remote computer refused the network connection]
