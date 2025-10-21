@@ -21,7 +21,6 @@ from github_adapter import clone_repo, fetch_repo_files, parse_function_calls, c
 import time
 import aiosqlite
 
-# Configure logging to write to file only in production, console in debug
 logging.basicConfig(
     level=logging.DEBUG,
     handlers=[
@@ -517,20 +516,18 @@ class RepoScopeAgent(AbstractAgent):
                 )
                 stream = response_handler.create_text_stream("analysis")
                 buffer = ""
-                paragraph_threshold = 500  # Emit after ~500 chars or paragraph break
+                paragraph_threshold = 500 
                 async for chunk in response:
                     if chunk.choices and chunk.choices[0].delta.content:
                         content = chunk.choices[0].delta.content
                         buffer += content
-                        # Emit only on paragraph breaks (\n\n) or if buffer is large
                         if "\n\n" in buffer or len(buffer) > paragraph_threshold:
-                            # Split on paragraph breaks and emit non-empty parts
                             parts = buffer.split("\n\n")
-                            for part in parts[:-1]:  # Process all but the last part
-                                if part.strip() and len(part.strip()) > 1:  # Skip empty or single-char parts
+                            for part in parts[:-1]: 
+                                if part.strip() and len(part.strip()) > 1: 
                                     await stream.emit_chunk(part.strip())
-                            buffer = parts[-1]  # Keep the last part in buffer
-                if buffer.strip() and len(buffer.strip()) > 1:  # Emit non-empty, non-trivial buffer
+                            buffer = parts[-1]  
+                if buffer.strip() and len(buffer.strip()) > 1: 
                     await stream.emit_chunk(buffer.strip())
                 await stream.complete()
             except Exception as e:

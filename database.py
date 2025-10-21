@@ -8,14 +8,13 @@ logger = logging.getLogger(__name__)
 class MessageDatabase:
     def __init__(self, db_path: str = "reposcope_sessions.db"):
         self.db_path = db_path
-        # Initialize database at startup
+       
         import asyncio
         asyncio.run(self.initialize())
 
     async def initialize(self):
         try:
             async with aiosqlite.connect(self.db_path) as db:
-                # Drop and recreate messages table to ensure correct schema
                 await db.execute("DROP TABLE IF EXISTS messages")
                 await db.execute("""
                     CREATE TABLE messages (

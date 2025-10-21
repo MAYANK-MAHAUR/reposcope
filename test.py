@@ -88,7 +88,7 @@ async def run_test_suite():
     async with aiohttp.ClientSession() as session:
         for prompt in test_prompts:
             await send_request(session, url, activity_id, prompt)
-            await asyncio.sleep(2)  # Avoid overwhelming the server
+            await asyncio.sleep(2) 
         print("\n=== Test Suite Completed ===")
 
 async def interactive_chat():
@@ -110,7 +110,7 @@ async def interactive_chat():
                 print("Please enter a valid prompt or type 'exit' to quit.")
                 continue
             await send_request(session, url, activity_id, prompt)
-            await asyncio.sleep(1)  # Avoid overwhelming the server
+            await asyncio.sleep(1)  
 
 if __name__ == "__main__":
     asyncio.run(run_test_suite())
