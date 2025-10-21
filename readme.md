@@ -2,13 +2,16 @@
 
 **RepoScopeAgent** is an intelligent, LLM-driven tool built with the [Sentient Agent Framework](https://github.com/sentient-agi/Sentient-Agent-Framework) to analyze GitHub repositories. It simplifies the process of understanding, summarizing, and comparing open-source projects by providing a conversational interface for tasks like code analysis, issue detection, pattern searching, line counting, and version diffing. Designed for developers, it integrates seamlessly with sentient.xyz, offering a user-friendly way to explore repositories without manual cloning or complex tooling.
 
+
 ## Problem It Solves
 
-Developers often struggle to quickly analyze GitHub repositories due to:
-- **Time-Consuming Manual Analysis**: Cloning repositories, running linters, or comparing versions manually is tedious and error-prone.
-- **Complex Code Insights**: Identifying code patterns, function calls, or potential issues requires specialized tools and expertise.
-- **Version Comparison Challenges**: Understanding changes between repository versions (e.g., new features, bug fixes) involves complex Git commands.
-- **Security and Reliability Concerns**: Assessing whether a repository is secure or trustworthy requires deep inspection of code and licenses.
+The majority of users exploring tools like this are developers — most come looking for **coding-related insights**. But the process is often messy:
+
+* **Limitations of Standard LLMs**: Traditional models like ChatGPT can only **crawl a repo’s front page** — they can’t **deep dive into the full codebase**. That means their answers often lack context, clarity, and accuracy when analyzing or summarizing repositories.
+* **Time-Consuming Manual Analysis**: Cloning repositories, running linters, or comparing versions manually is tedious and error-prone.
+* **Complex Code Insights**: Identifying code patterns, function calls, or potential issues requires specialized tools and expertise.
+* **Version Comparison Challenges**: Understanding changes between repository versions (e.g., new features, bug fixes) involves complex Git commands.
+* **Security and Reliability Concerns**: Assessing whether a repository is secure or trustworthy requires deep inspection of code and licenses.
 
 **RepoScopeAgent** solves these by:
 - **Automating Analysis**: Uses an LLM to classify queries and provide insights like summaries, security assessments, and code metrics.
